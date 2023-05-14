@@ -1,0 +1,145 @@
+:root {
+    --Bright-orange: hsl(31, 77%, 52%);
+    --Dark-cyan: hsl(184, 100%, 22%);
+    --Very-dark-cyan: hsl(179, 100%, 13%);
+
+    --transparent-white-paragraphs: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray-background-headings-buttons:  hsl(0, 0%, 95%);
+}
+
+@font-face {
+    font-family: LexendDeca;
+    src: url('./fonts/LexendDeca-Regular.ttf');
+}
+
+@font-face {
+    font-family: BigShouldersDisplay-Bold;
+    src: url('./fonts/BigShouldersDisplay-Bold.ttf');
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: var(--very-light-gray-background-headings-buttons);
+}
+
+main > .previewCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 250px;
+    max-height: 600rem;
+    padding: 30px;
+    color: var(--very-light-gray-background-headings-buttons);
+}
+
+.sedans {
+    background-color: var(--Bright-orange);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.suvs {
+    background-color: var(--Dark-cyan);
+}
+
+.luxury {
+    background-color: var(--Very-dark-cyan);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.sedans > .sedansTitle,
+.suvs > .suvsTitle,
+.luxury > .luxuryTitle {
+    font-family: BigShouldersDisplay-Bold;
+    font-size: 2rem;
+}
+
+.sedans > .sedansDescription,
+.suvs > .suvsDescription,
+.luxury > .luxuryDescription {
+    font-family: LexendDeca, sans-serif;
+    font-weight: normal;
+    opacity: 0.6;
+    font-size: 15px;
+    line-height: 20px;
+    color: var(--transparent-white-paragraphs);
+    margin-bottom: 100px;
+}
+
+button {
+    font-family: LexenDeca, sans-serif;
+    font-family: 15px;
+    background-color: var(--very-light-gray-background-headings-buttons);
+    border: none;
+    border-radius: 50px;
+    width: 146px;
+    height: 49px;
+}
+
+.sedans > .sedansButton {
+    color: var(--Bright-orange);
+}
+
+.suvs > .suvsButton {
+    color: var(--Dark-cyan);
+}
+
+.luxury > .luxuryButton {
+    color: var(--Very-dark-cyan);
+}
+
+.sedans > .sedansButton:hover,
+.suvs > .suvsButton:hover,
+.luxury > .luxuryButton:hover {
+    color: var(--very-light-gray-background-headings-buttons);
+    background-color: transparent;
+    border: 1px solid var(--very-light-gray-background-headings-buttons);
+    cursor: pointer;
+}
+
+.attribution { 
+    position: fixed;
+    bottom: 0.5em;
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: var(--Bright-orange);
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    main > .previewCard {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sedans {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .luxury {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 0px;
+    }
+}
